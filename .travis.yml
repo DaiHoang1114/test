@@ -1,4 +1,3 @@
-language: generic
 sudo: required
 services:
   - docker
@@ -7,4 +6,4 @@ before_install:
   - docker build -t daihoang/aws-test -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true daihoang/aws-test npm run test
+  - docker run daihoang/aws-test npm run test -- --coverage
